@@ -1,0 +1,33 @@
+<div class='modal-header'>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h3>Compose email</h3>
+</div>
+
+<div class='modal-body'>
+  <form class='form-horizontal'>
+    <fieldset>
+      <div class='control-group'>
+        <label class='control-label'>To:</label>
+        <div class='controls'>
+          <input type='text' maxlength='30' name='recipient' />
+        </div>
+      </div>
+      <div class='control-group'>
+        <label class='control-label'>Subject:</label>
+        <div class='controls'>
+          <input type='text' maxlength='30' name='subject' />
+        </div>
+      </div>
+      <div class='control-group'>
+        <label class='control-label'>Message</label>
+        <div class='controls'>
+          <textarea rows='5' name='content'></textarea>
+        </div>
+      </div> 
+    </fieldset>
+  </form>
+</div>
+
+<div class='modal-footer'>
+  <button class='btn btn-info send-email-btn'>Send</button>
+</div>

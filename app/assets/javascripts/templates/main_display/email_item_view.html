@@ -1,0 +1,14 @@
+<td><%= from %></td>
+<td><%= subject %></td>
+<td><%= content %></td>
+<td>
+  <% if(state === 'received') { %>
+    <button class='btn btn-mini btn-danger delete-email-btn'>
+      <i class="icon-trash icon-white"></i>&nbsp; &nbsp; Delete
+    </button>
+  <% } else { %>
+    <button class='btn btn-mini btn-success restore-email-btn'>
+      <i class="icon-share-alt icon-white"></i>&nbsp; &nbsp; Restore
+    </button>
+  <% } %>
+</td>
