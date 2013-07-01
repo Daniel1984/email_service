@@ -8,7 +8,8 @@ define([
     className: 'tabbable tabs-left main-dashboard',
     
     events: {
-      'click .compose-btn': 'composeEmail'
+      'click .compose-btn': 'composeEmail',
+      'click li a': 'redirect'
     },
 
     initialize: function(attr) {
@@ -26,6 +27,12 @@ define([
     composeEmail: function(e) {
       e.preventDefault()
       new ComposeEmailModal({model: this.model});
+    },
+
+    redirect: function(e) {
+      e.preventDefault();
+      var route = $(e.currentTarget).attr('href');
+      router.navigate(route, {trigger: true});
     }
 
   });

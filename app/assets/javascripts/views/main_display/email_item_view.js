@@ -24,7 +24,6 @@ define([
     deleteEmail: function(e) {
       e.preventDefault();
       this.model.save({state: 'removed'});
-     // this.remove();
     },
 
     restoreEmail: function(e) {
