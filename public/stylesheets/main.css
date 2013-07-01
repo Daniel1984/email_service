@@ -866,8 +866,10 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus{color:#fff;text-decorati
 div.dashboard-container ul{width:100%}
 div.dashboard-container .nav-tabs>li>a{min-width:150px}
 div.dashboard-container li{cursor:pointer}
-div.content-container{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:20px;margin-left:0px !important;background:white}div.content-container .spinner{display:block;margin:0 auto;top:100px}
+div.content-container{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:20px;margin-left:0px !important;background:white}div.content-container .spinner{display:block;margin:0 auto;top:80px}
 div.content-container .btn-mini{width:100%}
 div.content-container table{margin-bottom:0px}
+.email-content .bubble{padding:20px;margin-bottom:20px;background:white;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+.email-content .bubble.content{min-height:200px}
 body{padding-top:40px;background:whiteSmoke}
 .span8{min-height:200px !important}

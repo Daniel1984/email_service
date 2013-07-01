@@ -12,6 +12,7 @@ module.exports = function(app){
     app.get('/trash', homeController.trash); 
   });
   app.get('/emails', emailController.index);
+  app.get('/emails/:id', emailController.show);
   app.post('/emails', emailController.create);
   app.put('/emails/:id', emailController.update);
 };

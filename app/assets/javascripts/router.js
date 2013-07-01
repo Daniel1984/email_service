@@ -1,14 +1,14 @@
 define([
   'backbone',
-  'views/main_display/index_view'
-  ], function(Backbone, MainDisplayView) {
+  'views/main_display/index_view',
+  'views/email_content/index_view'
+  ], function(Backbone, MainDisplayView, EmailContentView) {
   var EmailRouter = Backbone.Router.extend({
     currentView: null,
 
     routes: {
-      'folder/inbox': 'index',
-      'folder/sent': 'sent',
-      'folder/trash': 'trash'
+      'folder/:path': 'handlePath',
+      'emails/:id': 'renderEmailItem'
     },
 
     renderView: function(view) {
@@ -20,19 +20,14 @@ define([
       $('body').prepend(this.currentView.render().el);
     },
 
-    index: function() {
-      var mainDisplayView = new MainDisplayView({emailType: 'received', activeTab: 'inbox'});
-      this.renderView(mainDisplayView);
+    handlePath: function(path) {
+      var view = new MainDisplayView({ path: path });
+      this.renderView(view);
     },
 
-    sent: function() {
-      var mainDisplayView = new MainDisplayView({emailType: 'received', activeTab: 'sent'});
-      this.renderView(mainDisplayView);
-    },
-
-    trash: function() {
-      var mainDisplayView = new MainDisplayView({emailType: 'removed', activeTab: 'trash'});
-      this.renderView(mainDisplayView);
+    renderEmailItem: function(id) {
+      var view = new EmailContentView();
+      this.renderView(view);
     }
 
   });

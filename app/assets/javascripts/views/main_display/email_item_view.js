@@ -13,6 +13,7 @@ define([
 
     initialize: function() {
       this.template = _.template(template);
+      this.model.on('sync', this.remove, this);
     },
 
     render: function() {
@@ -23,7 +24,7 @@ define([
     deleteEmail: function(e) {
       e.preventDefault();
       this.model.save({state: 'removed'});
-      this.remove();
+     // this.remove();
     },
 
     restoreEmail: function(e) {

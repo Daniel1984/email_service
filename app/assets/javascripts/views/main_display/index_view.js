@@ -12,8 +12,7 @@ define([
     className: 'container',
 
     initialize: function(attr) {
-      this.activeTab = attr.activeTab;
-      this.emailType = attr.emailType;
+      this.path = attr.path;
       this.template = _.template(template);
       this.emails = new Emails();
       this.emails.on('reset', this.renderEmailList, this);
@@ -31,7 +30,7 @@ define([
     },
 
     renderDashboard: function() {
-      var dashboardView = new DashboardView({activeTab: this.activeTab, model: this.email});
+      var dashboardView = new DashboardView({activeTab: this.path, model: this.email});
       this.$('.dashboard-container').append(dashboardView.render().el);
     },
 
@@ -46,10 +45,21 @@ define([
       }
     },
 
+    getEmailType: function(path) {
+      switch (path) {
+        case "trash":
+          return "removed";
+          break;
+        default:
+          return "received";
+      }
+    },
+
     getEmails: function() {
-      var type = this.emailType;
+      var type = this.getEmailType(this.path);
       this.emails.fetch({data: {state: type}, reset: true});
     }
+
   });
   return MainDisplayIndexView
 });

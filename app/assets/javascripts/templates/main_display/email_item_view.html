@@ -1,6 +1,8 @@
 <td><%= from %></td>
 <td><%= subject %></td>
-<td><%= content %></td>
+<td>
+  <a href="/emails/<%=_id%>"><%= content %></a>
+</td>
 <td>
   <% if(state === 'received') { %>
     <button class='btn btn-mini btn-danger delete-email-btn'>

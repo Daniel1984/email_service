@@ -5,7 +5,14 @@ module.exports.index = function(req, res) {
     if (err) return res.json({}, 422);
     res.json(posts, 200);
   });
-};
+}
+
+module.exports.show = function(req, res) { 
+  Email.show(req.params.id, function(err, email) {
+    if (err) return res.render('error', { title: 'Email error' });
+    res.render('email_item', { title: 'Email item', email: JSON.stringify(email) });
+  });
+}
 
 module.exports.create = function(req, res) {
   Email.create(req.body, function(err, email) {
@@ -16,7 +23,7 @@ module.exports.create = function(req, res) {
 
 module.exports.update = function(req, res) {
   Email.update(req.body, function(err, email) {
-    if (err) return res.json(err, 422);
+    if (err) return res.render('error', { title: 'Email error' });
     res.json(email, 200);
   });
 }

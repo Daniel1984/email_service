@@ -29,7 +29,10 @@ module.exports.create = function(email, cb) {
 }
 
 module.exports.show = function(id, cb) {
-
+  Email.findById(id, function(err, email) {
+    if (err) return cb(err, null);
+    cb(null, email);
+  });
 }
 
 module.exports.update = function(email, cb) {
