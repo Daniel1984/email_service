@@ -5,6 +5,8 @@ module.exports = function(app){
       emailController = require(ctrlPath + "/email_controller");
       
   app.get('/', homeController.index);
+  
+  app.get('/test', homeController.test);
 
   app.namespace('/folder', function() {
     app.get('/inbox', homeController.inbox);

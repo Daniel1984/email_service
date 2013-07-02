@@ -7,8 +7,7 @@ require.config({
     text: 'libs/requirejs/text',
     domready: 'libs/requirejs/domready',
     bootstrap: 'libs/bootstrap',
-    spin: 'libs/spin',
-    sinon: 'libs/sinon'
+    spin: 'libs/spin'
   },
   shim: {
     underscore: {
@@ -24,9 +23,6 @@ require.config({
     },
     bootstrap: {
       deps: ['jquery']
-    },
-    sinon: {
-      exports: 'sinon'
     }
   }
 });

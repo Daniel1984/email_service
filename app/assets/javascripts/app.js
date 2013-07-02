@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'router', 'sinon'], function($, Backbone, EmailRouter) {
+define(['jquery', 'backbone', 'router'], function($, Backbone, EmailRouter) {
   return {
     init: function() {
       router = new EmailRouter()

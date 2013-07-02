@@ -13,3 +13,7 @@ module.exports.sent = function(req, res) {
 module.exports.trash = function(req, res) {
   res.render('index', { title: 'Email trash' });
 }
+
+module.exports.test = function(req, res) {
+  res.render('spec_runner', { title: 'Email test' });
+}

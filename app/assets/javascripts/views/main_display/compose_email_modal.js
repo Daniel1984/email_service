@@ -1,7 +1,8 @@
 define([
   'backbone',
   'views/helpers/error_handler',
-  'text!templates/main_display/compose_email_modal.html'
+  'text!templates/main_display/compose_email_modal.html',
+  'bootstrap'
   ], function(Backbone, ErrorHandler, template) {
 
   var ComposeEmailModal = Backbone.View.extend({
